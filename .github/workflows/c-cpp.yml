@@ -1,4 +1,4 @@
-name: LLVM Toolchain
+name: Kernel Builder
 on: 
   workflow_dispatch:
   schedule:
