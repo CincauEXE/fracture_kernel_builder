@@ -9,7 +9,7 @@ git clone "https://$GH_USERNAME:$GH_TOKEN@$GH_URL" kernel
 
 
 # Main Declaration
-export KERNEL_NAME=$(cat "arch/arm64/configs/$DEVICE_DEFCONFIG" | grep "CONFIG_LOCALVERSION=" | sed 's/CONFIG_LOCALVERSION="-*//g' | sed 's/"*//g' )
+# export KERNEL_NAME=$(cat "arch/arm64/configs/$DEVICE_DEFCONFIG" | grep "CONFIG_LOCALVERSION=" | sed 's/CONFIG_LOCALVERSION="-*//g' | sed 's/"*//g' )
 KERNEL_ROOTDIR=$(pwd)/kernel # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=$DEVICE_CODENAME
 DEVICE_DEFCONFIG=$DEVICE_DEFCONFIG # IMPORTANT ! Declare your kernel source defconfig file here.
@@ -25,8 +25,8 @@ DATE=$(date +"%F-%S")
 DATE2=$(date +"%m%d")
 START=$(date +"%s")
 PATH="${PATH}:${CLANG_ROOTDIR}/bin:$(pwd)/gcc/bin:$(pwd)/gcc32/bin:${PATH}"
-DTB=$(pwd)/out/arch/arm64/boot/dts/mediatek/mt6768.dtb
-DTBO=$(pwd)/out/arch/arm64/boot/dtbo.img
+DTB=$(pwd)/kernel/out/arch/arm64/boot/dts/mediatek/mt6768.dtb
+DTBO=$(pwd)/kernel/out/arch/arm64/boot/dtbo.img
 
 #Check Kernel Version
 KERVER=$LINUXVER
@@ -59,7 +59,7 @@ tg_post_msg() {
 }
 
 # Post Main Information
-tg_post_msg "<b>KernelCompiler</b>%0AKernel Name : <code>${KERNEL_NAME}</code>%0AKernel Version : <code>${KERVER}</code>%0ABuild Date : <code>${DATE}</code>%0ABuilder Name : <code>${KBUILD_BUILD_USER}</code>%0ABuilder Host : <code>${KBUILD_BUILD_HOST}</code>%0ADevice Defconfig: <code>${DEVICE_DEFCONFIG}</code>%0AClang Version : <code>${KBUILD_COMPILER_STRING}</code>%0AClang Rootdir : <code>${CLANG_ROOTDIR}</code>%0AKernel Rootdir : <code>${KERNEL_ROOTDIR}</code>"
+tg_post_msg "<b>KernelCompiler</b>%0AKernel Name : <code>${KERNEL_NAME}</code>%0AKernel Version : <code>${LINUXVER}</code>%0ABuild Date : <code>${DATE}</code>%0ABuilder Name : <code>${KBUILD_BUILD_USER}</code>%0ABuilder Host : <code>${KBUILD_BUILD_HOST}</code>%0ADevice Defconfig: <code>${DEVICE_DEFCONFIG}</code>%0AClang Version : <code>${KBUILD_COMPILER_STRING}</code>%0AClang Rootdir : <code>${CLANG_ROOTDIR}</code>%0AKernel Rootdir : <code>${KERNEL_ROOTDIR}</code>"
 
 # Compile
 compile(){
@@ -85,8 +85,8 @@ make -j$(nproc) ARCH=arm64 O=out \
 
   git clone --depth=1 https://github.com/CincauEXE/AnyKernel3 AnyKernel
 	cp $IMAGE AnyKernel
-#        cp $DTBO AnyKernel
-#        mv $DTB AnyKernel/dtb
+        cp $DTBO AnyKernel
+        mv $DTB AnyKernel/dtb
 }
 
 # Push kernel to channel
@@ -112,7 +112,7 @@ function finerr() {
 # Zipping
 function zipping() {
     cd AnyKernel || exit 1
-    zip -r9 [$DATE2][DTC][$KERVER][R-OSS]$KERNEL_NAME[$DEVICE_CODENAME]$HEADCOMMITID.zip *
+    zip -r9 [$DATE2][DTC][$LINUXVER][R-OSS]$KERNEL_NAME[$DEVICE_CODENAME]$HEADCOMMITID.zip *
     cd ..
 }
 check
