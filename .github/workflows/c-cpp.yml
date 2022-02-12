@@ -12,8 +12,8 @@ jobs:
       - name: Download scripts
         uses: actions/checkout@v2
 
-      - name: clone dtc
-        run: git clone --depth=1 https://github.com/NusantaraDevs/DragonTC -b daily/10.0 clang
+      - name: clone clang
+        run: git clone --depth=1 https://github.com/CincauEXE/CincauTC clang
 
       - name: clone gcc
         run: git clone --depth=1 https://github.com/ZyCromerZ/aarch64-zyc-linux-gnu -b 10 gcc
