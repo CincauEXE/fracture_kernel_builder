@@ -5,8 +5,7 @@
 
 echo "Downloading few Dependecies . . ."
 # Kernel Sources
-git clone "https://$GH_USERNAME:$GH_TOKEN@$GH_URL" kernel
-
+git clone https://github.com/CincauEXE/kernel_redmi_mt6768 -b base-q-oss
 
 # Main Declaration
 # export KERNEL_NAME=$(cat "arch/arm64/configs/$DEVICE_DEFCONFIG" | grep "CONFIG_LOCALVERSION=" | sed 's/CONFIG_LOCALVERSION="-*//g' | sed 's/"*//g' )
