@@ -12,6 +12,9 @@ jobs:
       - name: Download scripts
         uses: actions/checkout@v2
 
+      - name: make directory
+        run: mkdir clang
+
       - name: clone clang
         run: wget -q https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/android-10.0.0_r3/clang-r353983c.tar.gz
 
