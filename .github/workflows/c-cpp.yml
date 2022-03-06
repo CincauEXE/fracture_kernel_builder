@@ -14,7 +14,6 @@ jobs:
 
       - name: clone clang
         run: git clone --depth=1 https://github.com/nibaji/DragonTC-8.0 clang
- clang
 
       - name: clone gcc
         run: git clone --depth=1 https://github.com/ZyCromerZ/aarch64-zyc-linux-gnu -b 12 gcc
