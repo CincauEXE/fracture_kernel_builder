@@ -5,7 +5,7 @@
 
 echo "Downloading few Dependecies . . ."
 # Kernel Sources
-git clone https://github.com/CincauEXE/kernel_redmi_mt6768 kernel
+git clone https://github.com/CincauEXE/kernel_redmi_mt6768 -b base-q kernel
 
 # Main Declaration
 # export KERNEL_NAME=$(cat "arch/arm64/configs/$DEVICE_DEFCONFIG" | grep "CONFIG_LOCALVERSION=" | sed 's/CONFIG_LOCALVERSION="-*//g' | sed 's/"*//g' )
@@ -20,7 +20,7 @@ export KBUILD_BUILD_HOST=Isekai # Change with your own hostname.
 CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version | head -n 1 | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
 LLD_VER="$("$CLANG_ROOTDIR"/bin/ld.lld --version | head -n 1)"
 GCC_VER="$("$GCC_ROOTDIR"/bin/aarch64-zyc-linux-gnu- --version | head -n 1)"
-export KBUILD_COMPILER_STRING="$CLANG_VER with $LLD_VER and $GCC_VER"
+export KBUILD_COMPILER_STRING="$CLANG_VER with $LLD_VER"
 IMAGE=$(pwd)/kernel/out/arch/arm64/boot/Image.gz-dtb
 HEADCOMMITID="$(git log --pretty=format:'%h' -n1)"
 DATE=$(date +"%F-%S")
