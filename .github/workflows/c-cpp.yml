@@ -12,9 +12,6 @@ jobs:
       - name: Download scripts
         uses: actions/checkout@v2
 
-      - name: clone clang
-        run: git clone --depth=1 https://github.com/nibaji/DragonTC-9.0 clang
-
       - name: clone gcc
         run: git clone --depth=1 https://github.com/ZyCromerZ/aarch64-zyc-linux-gnu -b 12 gcc
 
