@@ -20,7 +20,7 @@ export KBUILD_BUILD_HOST=Isekai # Change with your own hostname.
 CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version | head -n 1 | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
 LLD_VER="$("$CLANG_ROOTDIR"/bin/ld.lld --version | head -n 1)"
 GCC_VER="$("$GCC_ROOTDIR"/bin/aarch64-zyc-linux-gnu- --version | head -n 1)"
-export KBUILD_COMPILER_STRING="$CLANG_VER with $LLD_VER"
+export KBUILD_COMPILER_STRING="$CLANG_VER with $LLD_VER and $GCC_VER"
 IMAGE=$(pwd)/kernel/out/arch/arm64/boot/Image.gz-dtb
 HEADCOMMITID="$(git log --pretty=format:'%h' -n1)"
 DATE=$(date +"%F-%S")
