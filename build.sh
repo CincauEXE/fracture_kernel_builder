@@ -17,7 +17,7 @@ GCC_ROOTDIR=$(pwd)/gcc
 GCC32_ROOTDIR=$(pwd)/gcc32
 export KBUILD_BUILD_USER=CincauEXE # Change with your own name or else.
 export KBUILD_BUILD_HOST=Isekai # Change with your own hostname.
-CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version | head -n 1 | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
+CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version | head -n 1)"
 LLD_VER="$("$CLANG_ROOTDIR"/bin/ld.lld --version | head -n 1)"
 GCC_VER="$("$GCC_ROOTDIR"/bin/aarch64-zyc-linux-gnu- --version | head -n 1)"
 export KBUILD_COMPILER_STRING="$CLANG_VER with $LLD_VER"
@@ -76,7 +76,7 @@ make -j$(nproc) ARCH=arm64 O=out \
     OBJCOPY=${CLANG_ROOTDIR}/bin/llvm-objcopy \
     OBJDUMP=${CLANG_ROOTDIR}/bin/llvm-objdump \
     STRIP=${CLANG_ROOTDIR}/bin/llvm-strip \
-#    LD=${CLANG_ROOTDIR}/bin/ld.lld \
+    LD=${CLANG_ROOTDIR}/bin/ld.lld \
     CLANG_TRIPLE=aarch64-linux-gnu- \
     CROSS_COMPILE=aarch64-zyc-linux-gnu- \
     CROSS_COMPILE_ARM32=arm-zyc-linux-gnueabi-
@@ -87,8 +87,8 @@ make -j$(nproc) ARCH=arm64 O=out \
 
   git clone --depth=1 https://github.com/CincauEXE/AnyKernel3 AnyKernel
 	cp $IMAGE AnyKernel
-        cp $DTBO AnyKernel
-        mv $DTB AnyKernel/dtb
+#        cp $DTBO AnyKernel
+#        mv $DTB AnyKernel/dtb
 }
 
 # Push kernel to channel
