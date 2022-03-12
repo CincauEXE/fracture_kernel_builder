@@ -23,7 +23,6 @@ jobs:
 
       - name: Deploy builder
         env:
-          LINUXVER: $(make kernelversion)
           DEVICE_DEFCONFIG: ${{ secrets.DEVICE_DEFCONFIG}}
           DEVICE_CODENAME: ${{ secrets.DEVICE_CODENAME}}
           KERNEL_NAME: ${{ secrets.KERNEL_NAME}}
