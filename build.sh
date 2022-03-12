@@ -13,13 +13,10 @@ KERNEL_ROOTDIR=$(pwd)/kernel # IMPORTANT ! Fill with your kernel source root dir
 DEVICE_CODENAME=$DEVICE_CODENAME
 DEVICE_DEFCONFIG=$DEVICE_DEFCONFIG # IMPORTANT ! Declare your kernel source defconfig file here.
 CLANG_ROOTDIR=$(pwd)/clang # IMPORTANT! Put your clang directory here.
-GCC_ROOTDIR=$(pwd)/gcc
-GCC32_ROOTDIR=$(pwd)/gcc32
 export KBUILD_BUILD_USER=CincauEXE # Change with your own name or else.
 export KBUILD_BUILD_HOST=Isekai # Change with your own hostname.
 CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version)"
 LLD_VER="$("$CLANG_ROOTDIR"/bin/ld.lld --version)"
-GCC_VER="$("$GCC_ROOTDIR"/bin/aarch64-zyc-linux-gnu- --version | head -n 1)"
 export KBUILD_COMPILER_STRING="$CLANG_VER with $LLD_VER"
 IMAGE=$(pwd)/kernel/out/arch/arm64/boot/Image.gz-dtb
 HEADCOMMITID="$(git log --pretty=format:'%h' -n1)"
@@ -33,7 +30,6 @@ DTBO=$(pwd)/kernel/out/arch/arm64/boot/dtbo.img
 #Check Kernel Version
 cd ${KERNEL_ROOTDIR}
 LINUXVER= $(make kernelversion)
-KERVER= $(make kernelversion)
 
 # Checking environtment
 # Warning !! Dont Change anything there without known reason.
