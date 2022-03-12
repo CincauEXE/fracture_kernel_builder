@@ -31,8 +31,8 @@ DTB=$(pwd)/kernel/out/arch/arm64/boot/dts/mediatek/mt6768.dtb
 DTBO=$(pwd)/kernel/out/arch/arm64/boot/dtbo.img
 
 #Check Kernel Version
-LINUXVER= $(make kernelversion)
-KERVER= $(make kernelversion)
+LINUXVER= do $(make kernelversion)
+KERVER= do $(make kernelversion)
 
 # Checking environtment
 # Warning !! Dont Change anything there without known reason.
