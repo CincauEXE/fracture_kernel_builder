@@ -26,7 +26,7 @@ jobs:
           LINUXVER: ${{secrets.LINUXVER}}
           DEVICE_DEFCONFIG: merlin_defconfig
           DEVICE_CODENAME: Merlinx
-          KERNEL_NAME: ${{secrets.KERNEL_NAME}}
+          KERNEL_NAME: Fracture-Tempest+
           TG_TOKEN: ${{secrets.TG_TOKEN}}
           TG_CHAT_ID: ${{secrets.TG_CHAT_ID}}
           GH_USERNAME: ${{secrets.GH_USERNAME}}
