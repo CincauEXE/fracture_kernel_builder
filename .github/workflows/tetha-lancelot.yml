@@ -1,4 +1,4 @@
-name: Kernel Builder
+name: Build Tetha Lancelot
 on: 
   workflow_dispatch:
   schedule:
