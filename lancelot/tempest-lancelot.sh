@@ -4,6 +4,9 @@
 #
 
 echo "Downloading few Dependecies . . ."
+# Toolchain
+git clone --depth=1 https://github.com/NusantaraDevs/DragonTC -b 10.0 dtc
+
 # Kernel Sources
 git clone https://github.com/CincauEXE/kernel_redmi_mt6768 -b base-r-oss-tmpst tmpst
 
