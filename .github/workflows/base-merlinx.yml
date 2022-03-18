@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: clone clang
-        run: git clone --depth=1 https://github.com/CincauEXE/CincauTC clang
+        run: git clone --depth=1 https://github.com/CincauEXE/CincauTC
 
       - name: clone gcc
         run: git clone --depth=1 https://github.com/ZyCromerZ/aarch64-zyc-linux-gnu -b 12 gcc
