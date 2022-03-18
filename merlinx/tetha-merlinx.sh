@@ -89,8 +89,8 @@ make -j$(nproc) ARCH=arm64 O=out \
 
   git clone --depth=1 https://github.com/CincauEXE/AnyKernel3 AnyKernel
 	cp $IMAGE AnyKernel
-        cp $DTBO AnyKernel
-        mv $DTB AnyKernel/dtb
+#        cp $DTBO AnyKernel
+#        mv $DTB AnyKernel/dtb
 }
 
 # Push kernel to channel
