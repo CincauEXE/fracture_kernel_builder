@@ -1,4 +1,4 @@
-name: Build Tetha Lancelot
+name: Build Tetha Merlinx
 on: 
   workflow_dispatch:
   schedule:
