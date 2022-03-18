@@ -1,4 +1,4 @@
-name: Build Base Lancelot
+name: Build Base Merlinx
 on: 
   workflow_dispatch:
   schedule:
