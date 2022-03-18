@@ -24,8 +24,8 @@ jobs:
       - name: Deploy builder
         env:
           LINUXVER: ${{ secrets.LINUXVER}}
-          DEVICE_DEFCONFIG: ${{ lancelot_defconfig}
-          DEVICE_CODENAME: ${ Lancelot}
+          DEVICE_DEFCONFIG: ${lancelot_defconfig}
+          DEVICE_CODENAME: ${Lancelot}
           KERNEL_NAME: ${{ secrets.KERNEL_NAME}}
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
