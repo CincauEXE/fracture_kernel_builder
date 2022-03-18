@@ -23,14 +23,14 @@ export KBUILD_BUILD_HOST=Isekai # Change with your own hostname.
 CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version)"
 LLD_VER="$("$CLANG_ROOTDIR"/bin/ld.lld --version)"
 export KBUILD_COMPILER_STRING="$CLANG_VER with $LLD_VER"
-IMAGE=$(pwd)/kernel/out/arch/arm64/boot/Image.gz-dtb
+IMAGE=$(pwd)/base/out/arch/arm64/boot/Image.gz-dtb
 HEADCOMMITID="$(git log --pretty=format:'%h' -n1)"
 DATE=$(date +"%F-%S")
 DATE2=$(date +"%m%d")
 START=$(date +"%s")
 PATH="${PATH}:${CLANG_ROOTDIR}/bin:$(pwd)/gcc/bin:$(pwd)/gcc32/bin:${PATH}"
-DTB=$(pwd)/kernel/out/arch/arm64/boot/dts/mediatek/mt6768.dtb
-DTBO=$(pwd)/kernel/out/arch/arm64/boot/dtbo.img
+DTB=$(pwd)/base/out/arch/arm64/boot/dts/mediatek/mt6768.dtb
+DTBO=$(pwd)/base/out/arch/arm64/boot/dtbo.img
 
 #Check Kernel Version
 KERVER=$LINUXVER
