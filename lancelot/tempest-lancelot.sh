@@ -12,7 +12,7 @@ git clone https://github.com/CincauEXE/kernel_redmi_mt6768 -b base-r-oss-tmpst k
 KERNEL_ROOTDIR=$(pwd)/kernel # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=$DEVICE_CODENAME
 DEVICE_DEFCONFIG=$DEVICE_DEFCONFIG # IMPORTANT ! Declare your kernel source defconfig file here.
-CLANG_ROOTDIR=$(pwd)/clang # IMPORTANT! Put your clang directory here.
+CLANG_ROOTDIR=$(pwd)/dtc # IMPORTANT! Put your clang directory here.
 export KBUILD_BUILD_USER=CincauEXE # Change with your own name or else.
 export KBUILD_BUILD_HOST=Isekai # Change with your own hostname.
 CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version)"
