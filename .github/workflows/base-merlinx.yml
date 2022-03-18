@@ -12,15 +12,6 @@ jobs:
       - name: Download scripts
         uses: actions/checkout@v2
 
-      - name: clone clang
-        run: git clone --depth=1 https://github.com/CincauEXE/CincauTC
-
-      - name: clone gcc
-        run: git clone --depth=1 https://github.com/ZyCromerZ/aarch64-zyc-linux-gnu -b 12 gcc
-
-      - name: clone gcc32
-        run: git clone --depth=1 https://github.com/ZyCromerZ/arm-zyc-linux-gnueabi -b 12 gcc32
-
       - name: Deploy builder
         env:
           LINUXVER: ${{secrets.LINUXVER}}
