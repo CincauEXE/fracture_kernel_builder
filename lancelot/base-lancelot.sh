@@ -5,11 +5,11 @@
 
 echo "Downloading few Dependecies . . ."
 # Kernel Sources
-git clone https://github.com/CincauEXE/kernel_redmi_mt6768 -b base-r-oss kernel
+git clone https://github.com/CincauEXE/kernel_redmi_mt6768 -b base-r-oss base
 
 # Main Declaration
 # export KERNEL_NAME=$(cat "arch/arm64/configs/$DEVICE_DEFCONFIG" | grep "CONFIG_LOCALVERSION=" | sed 's/CONFIG_LOCALVERSION="-*//g' | sed 's/"*//g' )
-KERNEL_ROOTDIR=$(pwd)/kernel # IMPORTANT ! Fill with your kernel source root directory.
+KERNEL_ROOTDIR=$(pwd)/base # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=$DEVICE_CODENAME
 DEVICE_DEFCONFIG=$DEVICE_DEFCONFIG # IMPORTANT ! Declare your kernel source defconfig file here.
 CLANG_ROOTDIR=$(pwd)/CincauTC # IMPORTANT! Put your clang directory here.
