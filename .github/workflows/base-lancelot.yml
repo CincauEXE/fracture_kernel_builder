@@ -1,4 +1,4 @@
-name: Build Base Lancelot
+name: Build Vortex Lancelot
 on: 
   workflow_dispatch:
   schedule:
@@ -17,11 +17,11 @@ jobs:
           LINUXVER: ${{secrets.LINUXVER}}
           DEVICE_DEFCONFIG: lancelot_defconfig
           DEVICE_CODENAME: Lancelot
-          KERNEL_NAME: Fracture-Base+
+          KERNEL_NAME: Fracture-Vortex
           TG_TOKEN: ${{secrets.TG_TOKEN}}
           TG_CHAT_ID: ${{secrets.TG_CHAT_ID}}
           GH_USERNAME: ${{secrets.GH_USERNAME}}
           GH_EMAIL: ${{secrets.GH_EMAIL}}
           GH_TOKEN: ${{secrets.GH_TOKEN}}
           GH_URL: ${{secrets.GH_URL}}
-        run: cd lancelot && . base-lancelot.sh
+        run: cd lancelot && . vortex-lancelot.sh
