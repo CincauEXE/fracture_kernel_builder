@@ -5,22 +5,23 @@
 
 echo "Downloading few Dependecies . . ."
 # Toolchain
+git clone --depth=1 https://github.com/CincauEXE/CincauTC kleng
 git clone --depth=1 https://github.com/ZyCromerZ/aarch64-zyc-linux-gnu -b 12 gcc
 git clone --depth=1 https://github.com/ZyCromerZ/arm-zyc-linux-gnueabi -b 12 gcc32
 
 # Kernel Sources
-git clone https://github.com/CincauEXE/kernel_redmi_mt6768 -b base-r-oss-uv-vortex kernel
+git clone --depth=1 https://github.com/CincauEXE/kernel_redmi_mt6768 -b base-r-oss-uv-vortex kernel
 
 # Main Declaration
 # export KERNEL_NAME=$(cat "arch/arm64/configs/$DEVICE_DEFCONFIG" | grep "CONFIG_LOCALVERSION=" | sed 's/CONFIG_LOCALVERSION="-*//g' | sed 's/"*//g' )
-KERNEL_ROOTDIR=$(pwd)/kernel # IMPORTANT ! Fill with your kernel source root directory.
+KERNEL_ROOTDIR=$(pwd)/vortex # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=$DEVICE_CODENAME
 DEVICE_DEFCONFIG=$DEVICE_DEFCONFIG # IMPORTANT ! Declare your kernel source defconfig file here.
-CLANG_ROOTDIR=$(pwd)/clang # IMPORTANT! Put your clang directory here.
+CLANG_ROOTDIR=$(pwd)/kleng # IMPORTANT! Put your clang directory here.
 export KBUILD_BUILD_USER=CincauEXE # Change with your own name or else.
 export KBUILD_BUILD_HOST=Isekai # Change with your own hostname.
-# CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version)"
-# LLD_VER="$("$CLANG_ROOTDIR"/bin/ld.lld --version)"
+CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version)"
+LLD_VER="$("$CLANG_ROOTDIR"/bin/ld.lld --version)"
 export KBUILD_COMPILER_STRING="$CLANG_VER by CincauEXE"
 IMAGE=$(pwd)/kernel/out/arch/arm64/boot/Image.gz-dtb
 HEADCOMMITID="$(git log --pretty=format:'%h' -n1)"
@@ -28,8 +29,8 @@ DATE=$(date +"%F-%S")
 DATE2=$(date +"%m%d")
 START=$(date +"%s")
 PATH="${PATH}:${CLANG_ROOTDIR}/bin:$(pwd)/gcc/bin:$(pwd)/gcc32/bin:${PATH}"
-DTB=$(pwd)/kernel/out/arch/arm64/boot/dts/mediatek/mt6768.dtb
-DTBO=$(pwd)/kernel/out/arch/arm64/boot/dtbo.img
+DTB=$(pwd)/vortex/out/arch/arm64/boot/dts/mediatek/mt6768.dtb
+DTBO=$(pwd)/vortex/out/arch/arm64/boot/dtbo.img
 
 #Check Kernel Version
 KERVER=$LINUXVER
