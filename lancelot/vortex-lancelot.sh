@@ -23,7 +23,7 @@ export KBUILD_BUILD_HOST=Isekai # Change with your own hostname.
 CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version)"
 LLD_VER="$("$CLANG_ROOTDIR"/bin/ld.lld --version)"
 export KBUILD_COMPILER_STRING="$CLANG_VER by CincauEXE"
-IMAGE=$(pwd)/kernel/out/arch/arm64/boot/Image.gz-dtb
+IMAGE=$(pwd)/vortex/out/arch/arm64/boot/Image.gz-dtb
 HEADCOMMITID="$(git log --pretty=format:'%h' -n1)"
 DATE=$(date +"%F-%S")
 DATE2=$(date +"%m%d")
