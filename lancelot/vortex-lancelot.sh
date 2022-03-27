@@ -19,8 +19,8 @@ DEVICE_DEFCONFIG=$DEVICE_DEFCONFIG # IMPORTANT ! Declare your kernel source defc
 CLANG_ROOTDIR=$(pwd)/clang # IMPORTANT! Put your clang directory here.
 export KBUILD_BUILD_USER=CincauEXE # Change with your own name or else.
 export KBUILD_BUILD_HOST=Isekai # Change with your own hostname.
-CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version)"
-LLD_VER="$("$CLANG_ROOTDIR"/bin/ld.lld --version)"
+# CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version)"
+# LLD_VER="$("$CLANG_ROOTDIR"/bin/ld.lld --version)"
 export KBUILD_COMPILER_STRING="$CLANG_VER by CincauEXE"
 IMAGE=$(pwd)/kernel/out/arch/arm64/boot/Image.gz-dtb
 HEADCOMMITID="$(git log --pretty=format:'%h' -n1)"
