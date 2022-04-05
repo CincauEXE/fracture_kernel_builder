@@ -10,7 +10,7 @@ git clone --depth=1 https://github.com/ZyCromerZ/aarch64-zyc-linux-gnu -b 12 gcc
 git clone --depth=1 https://github.com/ZyCromerZ/arm-zyc-linux-gnueabi -b 12 gcc32
 
 # Kernel Sources
-git clone https://github.com/CincauEXE/kernel_redmi_mt6768 -b base-r-oss base
+git clone --depth=1 https://github.com/CincauEXE/kernel_redmi_mt6768 -b base-r-oss base
 
 # Main Declaration
 # export KERNEL_NAME=$(cat "arch/arm64/configs/$DEVICE_DEFCONFIG" | grep "CONFIG_LOCALVERSION=" | sed 's/CONFIG_LOCALVERSION="-*//g' | sed 's/"*//g' )
