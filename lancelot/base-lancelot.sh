@@ -18,13 +18,12 @@ KERNEL_ROOTDIR=$(pwd)/base # IMPORTANT ! Fill with your kernel source root direc
 DEVICE_CODENAME=$DEVICE_CODENAME
 DEVICE_DEFCONFIG=$DEVICE_DEFCONFIG # IMPORTANT ! Declare your kernel source defconfig file here.
 CLANG_ROOTDIR=$(pwd)/CincauTC # IMPORTANT! Put your clang directory here.
-export KBUILD_BUILD_USER=CincauEXE # Change with your own name or else.
-export KBUILD_BUILD_HOST=Isekai # Change with your own hostname.
+export KBUILD_BUILD_USER=Shinka # Change with your own name or else.
+export KBUILD_BUILD_HOST=Kivotos # Change with your own hostname.
 CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version)"
 LLD_VER="$("$CLANG_ROOTDIR"/bin/ld.lld --version)"
 export KBUILD_COMPILER_STRING="$CLANG_VER with $LLD_VER"
 IMAGE=$(pwd)/base/out/arch/arm64/boot/Image.gz-dtb
-HEADCOMMITID="$(git log --pretty=format:'%h' -n1)"
 DATE=$(date +"%F-%S")
 DATE2=$(date +"%m%d")
 START=$(date +"%s")
